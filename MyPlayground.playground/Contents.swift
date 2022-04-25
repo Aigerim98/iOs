@@ -10,41 +10,42 @@ func hasZero(array : [Int]) -> Bool{
 }
 
 func hasTwoZero(array : [Int]) -> Bool {
-    var cnt : Int = 0
+    var counter : Int = 0
     for element in array {
         if element == 0 {
-            cnt += 1;
+            counter += 1;
         }
     }
-    if cnt == 2 {
+    if counter == 2 {
         return true
     }
     return false
 }
-func threezeros (array : [Int]) -> Bool {
-
-    var lastindex = array.count - 1
-    for index in 0...lastindex {
-        if index != lastindex{
-            if array[index] == 0 && array[index + 1] == 0 && array[index + 2] == 0 {
-                return true
-            }
-        }else if index > 2{
-            if array[index] == 0 && array[index-1] == 0 && array[index-2] == 0 {
+func threeZeros(array : [Int]) -> Bool {
+    if array.count < 3 {return false}
+    var counter : Int = 0
+    for element in array{
+        if element != 0 {
+            counter = 0
+        }else {
+            counter += 1
+            if (counter == 3){
                 return true
             }
         }
     }
-    return false;
+    return false
 }
-func sumOfArray(array : [Int]) -> Int {
+var array = [1, 2, 3, 4, 0, 0]
+threeZeros(array: array)
+func sumNumbers(array : [Int]) -> Int {
     var sum : Int = 0
     for element in array {
         sum += element
     }
     return sum
 }
-func reverseArray(array : [Int]) -> [Int]{
+func reverseNumbers(array : [Int]) -> [Int]{
     var newArr: [Int] = []
     var lastIndex = array.count - 1
     for index in 0...lastIndex{
@@ -54,16 +55,16 @@ func reverseArray(array : [Int]) -> [Int]{
 }
 
 func evenOdd(array : [Int]) -> (even : Int, odd : Int){
-    var evenCnt : Int = 0
-    var oddCnt : Int = 0
+    var evenCounter : Int = 0
+    var oddCounter : Int = 0
     for element in array{
         if element % 2 == 0{
-            evenCnt += 1
+            evenCounter += 1
         }else {
-            oddCnt += 1
+            oddCounter += 1
         }
     }
-    return (evenCnt, oddCnt)
+    return (evenCounter, oddCounter)
 }
 
 func diffMaxMin(array : [Int]) -> Int {
@@ -76,6 +77,6 @@ func diffMaxMin(array : [Int]) -> Int {
             currentMax = element
         }
     }
-    var diff = currentMax - currentMin
-    return diff
+    var difference = currentMax - currentMin
+    return difference
 }
