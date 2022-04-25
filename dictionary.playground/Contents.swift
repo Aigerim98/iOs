@@ -43,23 +43,23 @@ cipherText(input: "hello programmer")
 func getDict(array: [Int]) -> [Int : Int]{
     var numbers: [Int : Int] = [:]
     let lastIndex = array.count - 1
-    var cnt = 0
+    var counter = 0
     for i in 0...lastIndex{
-        cnt = 0
+        counter = 0
         var nextIndex = i + 1
         for j in 0...i{
             if (array[i] == array[j]){
-                cnt += 1
+                counter += 1
             }
         }
-        numbers[array[i]] = cnt
+        numbers[array[i]] = counter
     }
     /*for element in array{
-        cnt = 1
+        counter = 1
         if numbers[element] != nil {
-            numbers[element] = cnt + 1;
+            numbers[element] = counter + 1;
         }else{
-            numbers[element] = cnt
+            numbers[element] = counter
         }
     }*/
     return numbers
@@ -86,11 +86,11 @@ func gpaHigherThree(student: [String : Double]) -> [String : Double]{
 
 func countWords(array: [String]) -> [String : Int]{
     var newDict: [String : Int] = [:]
-    var cnt: Int = 0
+    var counter: Int = 0
     for sentence in array{
         var word = sentence.components(separatedBy: " ")
-        cnt = word.count
-        newDict[sentence] = cnt
+        counter = word.count
+        newDict[sentence] = counter
     }
     return newDict
 }
@@ -101,3 +101,4 @@ calculateAvrGpa(students: student)
 gpaHigherThree(student: student)
 var sentences = ["hello singularity", "hello world", "London is the capital of Great Britain"]
 countWords(array: sentences)
+ 
