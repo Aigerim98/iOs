@@ -68,3 +68,97 @@ func romanToInt(roman: String) -> Int{
 }
 
 romanToInt(roman: "IX")
+
+//Given an integer x, return true if x is palindrome integer.
+// An integer is a palindrome when it reads the same backward as forward.
+
+func isPalindrome(number: Int) -> Bool{
+    var reversed: Int = 0
+    var remainder: Int = 0
+    var temp = number
+    while temp != 0 {
+        remainder = temp % 10
+        reversed = reversed * 10 + remainder
+        temp = temp / 10
+    }
+    if reversed == number {
+        return true
+    }
+    else {return false}
+}
+isPalindrome(number: 1001)
+
+let cast = ["Vivien", "Marlon", "Kim", "Karl"]
+print(cast[1].contains("Mar"))
+
+//Write a function to find the longest common prefix string amongst an array of strings.
+//
+//If there is no common prefix, return an empty string "".
+
+
+func longestCommonPrefix(words: [String]) -> String{
+    var reference: String = words[0]
+    for word in words{
+        while !word.hasPrefix(reference){
+            reference = String(reference.dropLast())
+        }
+    }
+    return reference
+}
+longestCommonPrefix(words: ["flower","flow", "flo"])
+
+
+//valid parentheses
+func isValid(s: String) -> Bool {
+    if s.count % 2 != 0 { return false }
+    let dictionary: [Character: Character] = [")": "(","]" :"[","}" :"{"]
+    let open: [Character] = ["(", "[", "{"]
+    var openers: [Character] = [Character]()
+    for character in s {
+        if open.contains(character) {
+            openers.append(character)
+        } else {
+            if openers.last == dictionary[character] {
+                print(dictionary[character]!)
+                openers.removeLast()
+            } else {
+                return false
+            }
+        }
+    }
+    return openers.isEmpty
+}
+isValid(s: "([])))")
+
+//remove duplicates from sorted array
+func removeDuplicates(_ nums:inout [Int]) -> [Int]{
+    let lastIndex = nums.count - 1
+    var j = 0
+    var current = nums.first
+    for i in 1...lastIndex{
+        if nums[i - j] == current{
+            nums.remove(at: i - j)
+            j += 1
+        }else{
+            current = nums[i - j]
+        }
+    }
+    return nums
+}
+var arr = [1, 1, 1, 2, 2, 3, 4, 4, 5]
+removeDuplicates(&arr)
+
+func removeElements(_ nums: inout [Int], val: Int) -> [Int]{
+    let lastIndex = nums.count - 1
+    var j = 0
+    for i in 1...lastIndex{
+        if nums[i - j] == val {
+            nums.remove(at: i - j)
+            j += 1
+        }
+    }
+    return nums
+}
+var arr2 = [1, 2, 3, 2, 4, 2, 5, 2,  2, 7]
+removeElements(&arr2, val: 2)
+
