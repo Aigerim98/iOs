@@ -1,4 +1,5 @@
 import UIKit
+import Darwin
 //Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 //
 //You may assume that each input would have exactly one solution, and you may not use the same element twice.
@@ -162,3 +163,46 @@ func removeElements(_ nums: inout [Int], val: Int) -> [Int]{
 var arr2 = [1, 2, 3, 2, 4, 2, 5, 2,  2, 7]
 removeElements(&arr2, val: 2)
 
+//implement strStr()
+extension StringProtocol {
+    subscript(offset: Int) -> Character {
+        self[index(startIndex, offsetBy: offset)]
+    }
+}
+func strStr(_ haystack: String, _ needle: String) -> Int {
+    var nIndex = 0
+    var hIndex = 0
+    var foundIndex = -1
+    let hLength = haystack.count
+    let nLength = needle.count
+    while hIndex < hLength {
+        if haystack[hIndex] == needle[nIndex]{
+            if foundIndex == -1 {
+                foundIndex = hIndex
+                nIndex = 0
+            }
+            nIndex += 1
+            if nLength == nIndex {break}
+        }else{
+            foundIndex = -1
+        }
+        hIndex += 1
+    }
+    return foundIndex
+}
+strStr("aaaaaaaaaaaaaaaaaaaaa", "bba")
+
+//Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+
+func searchInsert(_ nums: [Int], _ target: Int) -> Int {
+    let lastIndex = nums.count - 1
+    for i in 0...lastIndex{
+        if nums[i] >= target {return i}
+        if i == lastIndex {return lastIndex + 1}
+    }
+    return 0
+}
+
+let n = [1, 3, 5, 6]
+let t = 2
+searchInsert(n, t)
