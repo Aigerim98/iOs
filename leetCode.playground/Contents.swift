@@ -206,3 +206,17 @@ func searchInsert(_ nums: [Int], _ target: Int) -> Int {
 let n = [1, 3, 5, 6]
 let t = 2
 searchInsert(n, t)
+
+//maximum subarray
+
+func maxSubArray(_ nums: [Int]) -> Int {
+    var maxSum = nums[0]
+    var currMax = nums[0]
+    for i in 1..<nums.count{
+        currMax = max(nums[i], currMax + nums[i])
+        maxSum = max(maxSum, currMax)
+    }
+    return maxSum
+}
+print(maxSubArray([5,4,-1,7,8]))
+
