@@ -17,7 +17,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     @IBOutlet var movieTable: UITableView!
     
-    var movies: [Movie] = [Movie.init(name: "Sonic", poster: UIImage.init(named: "sonic.jpg"), cast: [Cast.init(image: UIImage.init(named: "ben_schwartz.jpg"), name: "Ben Schwartz"), Cast.init(image: UIImage.init(named: "jim_carrey.jpg"), name: "Jim Carrey"), Cast.init(image: UIImage.init(named: "natasha_rothwell.jpg"), name: "Natasha Rothwell"), Cast.init(image: UIImage.init( named: "lee_majdoub.jpg"), name: "Lee Majdoub")]), Movie.init(name: "The Batman", poster: UIImage.init(named:"The_Batman_Poster.jpg"), cast: nil)]
+    var movies: [Movie] = [Movie.init(name: "Sonic", poster: UIImage.init(named: "sonic.jpg"), cast: [Cast.init(image: UIImage.init(named: "ben_schwartz.jpg"), name: "Ben Schwartz", role: "Acting"), Cast.init(image: UIImage.init(named: "jim_carrey.jpg"), name: "Jim Carrey", role: "Acting"), Cast.init(image: UIImage.init(named: "natasha_rothwell.jpg"), name: "Natasha Rothwell", role: "Acting"), Cast.init(image: UIImage.init( named: "lee_majdoub.jpg"), name: "Lee Majdoub", role: "Acting")]), Movie.init(name: "The Batman", poster: UIImage.init(named:"The_Batman_Poster.jpg"), cast: [Cast.init(image: UIImage.init(named:"robert_pattinson.jpg"), name: "Robert Pattinson", role: "Acting"), Cast.init(image: UIImage.init(named:"zoe_kravitz.jpg"), name: "Zoe Kravitz", role: "Acting"), Cast.init(image: UIImage.init(named:"jeffrey_wright.jpg"), name: "Jeffrey Wright", role: "Acting"), Cast.init(image: UIImage.init(named: "colin_farell.jpg"), name: "Colin Farell", role: "Acting")])]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count

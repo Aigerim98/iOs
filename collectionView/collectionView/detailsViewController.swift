@@ -13,6 +13,7 @@ class detailsViewController: UIViewController, UICollectionViewDelegate, UIColle
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! CastCollectionViewCell
         cell.castImageView.image = cast?[indexPath.row].image
         cell.castNameLabel.text = cast?[indexPath.row].name
+        cell.castRoleLabel.text = cast?[indexPath.row].role
         cell.castImageView.layer.cornerRadius = cell.castImageView.frame.size.height / 2
         //cell.castImageView.layer.cornerRadius = 50
         return cell

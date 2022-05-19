@@ -16,4 +16,5 @@ struct Movie {
 struct Cast {
     var image: UIImage?
     var name: String?
+    var role: String?
 }
