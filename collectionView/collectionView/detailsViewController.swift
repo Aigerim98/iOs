@@ -19,7 +19,7 @@ class detailsViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if cast!.count < 1 {return 1}
+        if cast!.count < 1 {return 1} //если нет фотографий актеров то вывести пустую ячейку
         else {return cast!.count}
     }
 
