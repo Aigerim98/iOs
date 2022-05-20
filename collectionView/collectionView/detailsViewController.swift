@@ -15,6 +15,8 @@ class detailsViewController: UIViewController, UICollectionViewDelegate, UIColle
         cell.castNameLabel.text = cast?[indexPath.row].name
         cell.castRoleLabel.text = cast?[indexPath.row].role
         cell.castImageView.layer.cornerRadius = cell.castImageView.frame.size.height / 2
+        cell.castImageView.clipsToBounds = true
+        cell.castNameLabel.lineBreakMode = .byWordWrapping
         //cell.castImageView.layer.cornerRadius = 50
         return cell
     }
@@ -27,6 +29,8 @@ class detailsViewController: UIViewController, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width/4, height: 165)
     }
+    var ratingText: String!
+    @IBOutlet var movieRatingLabel: UILabel!
     var cast: [Cast]?
     var image: UIImage!
     override func viewDidLoad() {
@@ -34,6 +38,9 @@ class detailsViewController: UIViewController, UICollectionViewDelegate, UIColle
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         posterImageView.image = image
+        movieRatingLabel.text = ratingText
+        movieRatingLabel.layer.masksToBounds = true
+        movieRatingLabel.layer.cornerRadius = 5
         castCollectionView.dataSource = self
         castCollectionView.delegate = self
         castCollectionView.collectionViewLayout = layout

@@ -19,6 +19,7 @@ class MovieTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    @IBOutlet var movieRatingLabel: UILabel!
+    
     @IBOutlet var posterImageView: UIImageView!
 }
