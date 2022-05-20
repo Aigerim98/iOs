@@ -21,5 +21,18 @@ class MovieTableViewCell: UITableViewCell {
     }
     @IBOutlet var movieRatingLabel: UILabel!
     
+    @IBOutlet var movieReleaseDateLabel: UILabel!
+    @IBOutlet var movieNameLabel: UILabel!
     @IBOutlet var posterImageView: UIImageView!
+    func configure(with movie: Movie){
+        movieRatingLabel.text = "★ \(movie.rating!)"
+        movieNameLabel.text = movie.name
+        posterImageView.image = movie.poster
+        movieReleaseDateLabel.text = movie.dateOfRelease
+        movieNameLabel.lineBreakMode = .byWordWrapping
+        posterImageView.layer.cornerRadius = 10
+        posterImageView.clipsToBounds = true
+        movieRatingLabel.layer.masksToBounds = true
+        movieRatingLabel.layer.cornerRadius = 5
+    }
 }

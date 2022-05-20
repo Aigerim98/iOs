@@ -17,7 +17,7 @@ class detailsViewController: UIViewController, UICollectionViewDelegate, UIColle
         cell.castImageView.layer.cornerRadius = cell.castImageView.frame.size.height / 2
         cell.castImageView.clipsToBounds = true
         cell.castNameLabel.lineBreakMode = .byWordWrapping
-        //cell.castImageView.layer.cornerRadius = 50
+        //cell.configure(with: cast[indexPath.row])
         return cell
     }
     
@@ -29,25 +29,35 @@ class detailsViewController: UIViewController, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width/4, height: 165)
     }
-    var ratingText: String!
-    @IBOutlet var movieRatingLabel: UILabel!
+    var rating: Double!
+    var descriptionText: String!
     var cast: [Cast]?
     var image: UIImage!
+    var movieNameText: String!
+    var releaseDate: String!
+    @IBOutlet private var movieDescriptionLabel: UILabel!
+    @IBOutlet private var movieRatingLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         posterImageView.image = image
-        movieRatingLabel.text = ratingText
+        movieRatingLabel.text = "★ \(rating!)"
         movieRatingLabel.layer.masksToBounds = true
         movieRatingLabel.layer.cornerRadius = 5
         castCollectionView.dataSource = self
         castCollectionView.delegate = self
         castCollectionView.collectionViewLayout = layout
+        movieDescriptionLabel.text = descriptionText
+        movieDescriptionLabel.lineBreakMode = .byWordWrapping
+        movieNameLabel.text = movieNameText
+        dateOfReleaseLabel.text = releaseDate
     }
     
-    @IBOutlet var castCollectionView: UICollectionView!
-    @IBOutlet var posterImageView: UIImageView!
+    @IBOutlet private var dateOfReleaseLabel: UILabel!
+    @IBOutlet private var movieNameLabel: UILabel!
+    @IBOutlet private var castCollectionView: UICollectionView!
+    @IBOutlet private var posterImageView: UIImageView!
     /*
     // MARK: - Navigation
 

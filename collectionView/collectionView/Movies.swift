@@ -12,7 +12,9 @@ struct Movie {
     var name: String?
     var poster: UIImage?
     var cast: [Cast]?
-    var rating: String?
+    var rating: Double?
+    var description: String?
+    var dateOfRelease: String?
 }
 struct Cast {
     var image: UIImage?

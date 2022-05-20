@@ -13,10 +13,12 @@ class CastCollectionViewCell: UICollectionViewCell {
     @IBOutlet var castRoleLabel: UILabel!
     @IBOutlet var castNameLabel: UILabel!
 //    
-//    override func prepareForReuse() {
-//        castImageView.layer.cornerRadius = castImageView.frame.size.width / 2
-//        
-//        castImageView.layer.masksToBounds = false
-//        castImageView.clipsToBounds = true
-//    }
+    func configure(with cast: Cast){
+        castImageView.image = cast.image
+        castRoleLabel.text = cast.role
+        castNameLabel.text = cast.name
+        castImageView.layer.cornerRadius = castImageView.frame.size.height / 2
+        castImageView.clipsToBounds = true
+        castNameLabel.lineBreakMode = .byWordWrapping
+    }
 }
