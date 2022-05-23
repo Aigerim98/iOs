@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02056C5A283B8CF800D94F0F /* CastMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02056C59283B8CF800D94F0F /* CastMemberViewController.swift */; };
 		0217794728336F8E008AADEB /* detailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0217794628336F8E008AADEB /* detailsViewController.swift */; };
 		0217794928336FB1008AADEB /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0217794828336FB1008AADEB /* Movies.swift */; };
 		0217794F2833929F008AADEB /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0217794E2833929F008AADEB /* MovieTableViewCell.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02056C59283B8CF800D94F0F /* CastMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastMemberViewController.swift; sourceTree = "<group>"; };
 		0217794628336F8E008AADEB /* detailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailsViewController.swift; sourceTree = "<group>"; };
 		0217794828336FB1008AADEB /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
 		0217794E2833929F008AADEB /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				02C5BABD2832633D00A78353 /* SceneDelegate.swift */,
 				02C5BABF2832633D00A78353 /* ViewController.swift */,
 				02C5BAC12832633D00A78353 /* Main.storyboard */,
+				02056C59283B8CF800D94F0F /* CastMemberViewController.swift */,
 				02C5BAC42832633D00A78353 /* Assets.xcassets */,
 				02C5BAC62832633D00A78353 /* LaunchScreen.storyboard */,
 				02C5BAC92832633D00A78353 /* Info.plist */,
@@ -160,6 +163,7 @@
 				0217794F2833929F008AADEB /* MovieTableViewCell.swift in Sources */,
 				02C5BABC2832633D00A78353 /* AppDelegate.swift in Sources */,
 				02C5BABE2832633D00A78353 /* SceneDelegate.swift in Sources */,
+				02056C5A283B8CF800D94F0F /* CastMemberViewController.swift in Sources */,
 				0217794728336F8E008AADEB /* detailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
