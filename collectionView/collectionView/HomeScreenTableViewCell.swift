@@ -24,6 +24,7 @@ class HomeScreenTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
             cell.movieRatingLabel.text = "★ \(self.rowWithMovies[indexPath.row].rating!)"
             cell.movieRatingLabel.backgroundColor = .green
         }else {cell.movieRatingLabel.text = ""}
+        cell.movieGenreLabel.text = self.rowWithMovies[indexPath.row].genre?.joined(separator: ",")
         return cell
     }
     

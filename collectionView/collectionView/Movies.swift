@@ -15,6 +15,7 @@ struct Movie {
     var rating: Double?
     var description: String?
     var dateOfRelease: String?
+    var genre: [String]?
 }
 struct Cast {
     var image: UIImage?
